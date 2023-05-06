@@ -1,0 +1,9 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-status {
+  display: flex;
+  gap: 1rem;
+}

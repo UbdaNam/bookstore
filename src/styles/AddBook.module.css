@@ -1,0 +1,8 @@
+.add-form {
+  display: flex;
+  align-items: center;
+}
+
+.form-container {
+  margin-top: 2rem;
+}
