@@ -1,22 +1,38 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
+import { getBooks } from '../redux/books/booksSlice';
 
 export default function BookList() {
-  const { books } = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBooks());
+  }, [dispatch]);
+
+  const { books, status } = useSelector((state) => state.books);
   return (
-    <div className="list-container">
-      {books.map(({
-        itemId, title, author, category,
-      }) => (
-        <Book
-          key={itemId}
-          itemId={itemId}
-          title={title}
-          author={author}
-          category={category}
-        />
-      ))}
-    </div>
+    <>
+      {status === 'pending' && (
+        <div>
+          <p>Loading...</p>
+        </div>
+      )}
+      {status === 'idle' && (
+        <div className="list-container">
+          {books.map(({
+            itemId, title, author, category,
+          }) => (
+            <Book
+              key={itemId}
+              itemId={itemId}
+              title={title}
+              author={author}
+              category={category}
+            />
+          ))}
+        </div>
+      )}
+    </>
   );
 }

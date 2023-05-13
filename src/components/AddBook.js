@@ -13,6 +13,8 @@ export default function AddBook() {
     e.preventDefault();
     if (title && author) {
       dispatch(addBook({ title, author, category }));
+      setTitle('');
+      setAuthor('');
     }
   };
   return (
@@ -21,12 +23,14 @@ export default function AddBook() {
       <form className={style['add-form']}>
         <input
           type="text"
+          value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Book title"
           required
         />
         <input
           type="text"
+          value={author}
           onChange={(e) => setAuthor(e.target.value)}
           placeholder="Book author"
           required
