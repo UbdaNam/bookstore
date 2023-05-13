@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from '../styles/Navigation.module.css';
 
 export default function Navigation() {
@@ -10,10 +10,10 @@ export default function Navigation() {
         <nav>
           <ul className={styles['nav-links']}>
             <li>
-              <Link to="/">BOOKS</Link>
+              <NavLink to="/">BOOKS</NavLink>
             </li>
             <li>
-              <Link to="/categories">CATEGORIES</Link>
+              <NavLink to="/categories">CATEGORIES</NavLink>
             </li>
           </ul>
         </nav>

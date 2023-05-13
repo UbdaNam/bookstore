@@ -1,8 +1,51 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.8rem;
+  margin-bottom: 10rem;
+  border-top: solid 1px #e8e8e8;
+}
+
+.form-container > h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #888;
+}
+
 .add-form {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.form-container {
-  margin-top: 2rem;
+.add-form input,
+.add-form select {
+  flex: 0.7;
+  padding: 0.7rem 1rem;
+  border: solid 1px #e8e8e8;
+  border-radius: 4px;
+}
+
+.add-form select {
+  flex: 0.5;
+}
+
+.add-form input::placeholder {
+  font-size: 1rem;
+  color: #c4c4c4;
+}
+
+.add-form button {
+  flex: 0.3;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  background-color: #0290ff;
+  border-radius: 3px;
+  border: none;
 }

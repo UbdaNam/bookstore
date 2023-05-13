@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import { getBooks } from '../redux/books/booksSlice';
+import style from '../styles/BookList.module.css';
 
 export default function BookList() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ export default function BookList() {
         </div>
       )}
       {status === 'idle' && (
-        <div className="list-container">
+        <div className={style['list-container']}>
           {books.map(({
             itemId, title, author, category,
           }) => (

@@ -1,9 +1,115 @@
 .card {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  padding-block: 2rem 1.75rem;
+  padding-inline: 1.6rem calc(min(11vw, 9rem));
+  border-radius: 4px;
+  border: solid 1px var(--white);
+  background-color: #fff;
+}
+
+.card-info span {
+  font-size: 0.8rem;
+  color: #121212;
+  opacity: 0.5;
+  margin-bottom: 0.25rem;
+}
+
+.card-info > h2 {
+  font-size: 1.3rem;
+  color: #121212;
+}
+
+.card-info > h4 {
+  font-size: 0.8rem;
+  color: #4386bf;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.3rem;
+}
+
+.btn-container button {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #4386bf;
+  background-color: transparent;
+  border: none;
+}
+
+.btn-divider {
+  width: 0.125rem;
+  height: 1.5rem;
+  border: solid 1px #e8e8e8;
 }
 
 .card-status {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: calc(min(10vw, 3.5rem));
+  flex-wrap: wrap;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.3rem;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 5px solid #307bbe;
+  border-left-color: #e8e8e8;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.percentage {
+  font-size: 2rem;
+  color: #121212;
+}
+
+.status,
+.chapter span {
+  font-size: 0.8rem;
+  color: #121212;
+  opacity: 0.5;
+}
+
+.divider {
+  height: 3rem;
+  border-left: 3px solid #e8e8e8;
+}
+
+.chapter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chapter h4 {
+  font-size: 1rem;
+  color: #121212;
+  margin-top: 0.4rem;
+  margin-bottom: 1.4rem;
+}
+
+.chapter button {
+  background-color: #0290ff;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
 }

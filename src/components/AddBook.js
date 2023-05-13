@@ -7,14 +7,15 @@ export default function AddBook() {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('action');
+  const [category, setCategory] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title && author) {
+    if (title && author && category) {
       dispatch(addBook({ title, author, category }));
       setTitle('');
       setAuthor('');
+      setCategory('');
     }
   };
   return (
@@ -40,9 +41,12 @@ export default function AddBook() {
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
-          <option value="action">Action</option>
-          <option value="science-fiction">Science Fiction</option>
-          <option value="economy">Economy</option>
+          <option hidden value="" disabled selected>
+            Category
+          </option>
+          <option value="Action">Action</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Economy">Economy</option>
         </select>
         <button type="submit" onClick={handleSubmit}>
           ADD BOOK
