@@ -9,7 +9,7 @@ export default function BookList() {
 
   useEffect(() => {
     dispatch(getBooks());
-  }, [dispatch]);
+  }, [getBooks]);
 
   const { books, status } = useSelector((state) => state.books);
   return (
